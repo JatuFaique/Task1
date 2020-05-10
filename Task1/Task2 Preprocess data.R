@@ -1,5 +1,6 @@
 df2
 
+library(dplyr)
 
 #Creating a function to preprocess
 #our target data we derived earlier
@@ -26,20 +27,3 @@ pre_process <- function(df2)
 }
 
 pre_process(df2)
-
-"Our data is now clean and ready to be used for analysis.
-At this point you can do anything with the data. 
-We shall build a matrix with term frequencies to help us 
-identify the most common terms. 
-It is called a term document matrix."
-
-dtm <- TermDocumentMatrix(mydata)
-m <- as.matrix(dtm)
-v <- sort(rowSums(m),decreasing=TRUE)
-d <- data.frame(word = names(v),freq=v)
-head(d, 20)
-
-
-
-
-
